@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 배경 이미지
+        url() : 파일을 가져오는 함수 */
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-image: url('../day30/dog.jpg');
+            /* background-position은 주로 여러 이미기자 하나로 된 이미지 파일을 원하는 부분만 잘라서 쓸 때 사용된다.*/
+            background-position: center,center; /*해당 이미지를 어디서부터 시작할건지 결정하는 속성*/
+            
+            /* no-repeat : 반복 안함! 
+                repeat-x : x축 반복
+                repeat-y : y축 반복
+                repeat : x,y축 반복
+            */
+             background-repeat: no-repeat;
+
+            /* 배경이미지의 가로크기와 세로 크기를 설정
+            contain : 배경이미지의 가로, 세로 모두 요소보다 작다는 조건하에 가능한 크게 조정.
+            이미지의 가로, 세로 비율은 유지.
+            cover : 배경 이미지의 가로, 세로 모두 요소보다 크다는 조건하에 가능한 작게 조정, 가로, 세로 비율은 유지. 
+             */
+            background-size: contain;
+
+            /* 차이점은 무엇일까 ?
+            배경위에는 말그대로 컨텐츠가 올라갈 수 있고, 그냥 이미지는 그냥 말그대로 이미지이기 때문에 
+            글이나 컨텐츠랑은 어울릴 수 없다. (다른 추가적인 작업이 필요함)
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

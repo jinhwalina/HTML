@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: cornflowerblue;
+
+            /* calc 함수 : 계산 결과를 알려주는 함수, 주로 단위가 서로 다른 값들을 계산할 때 사용.*/
+            
+            /* margin-left: calc(50% - 250px); */
+            margin: 0 auto;
+
+            /* margin-left: 50%; 이건 그냥 마진이 50% 떨어진 상태에서 시작한다는거라 의미가 없음..*/
+            /* margin-left: 50%-250px; 이런식으로 쓰면 되긴 하지만, 계산을 직접적으로 못하기때문에 함수 사용!
+                block태그에서만 사용되는 가운데 정렬*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

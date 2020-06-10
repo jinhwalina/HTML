@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            /* 
+            display 속성 값
+                - inline, block, inline-block, none 
+            display: inline; 이렇게 쓰면 오류가 생긴다. 왜? inline은 크기 조정이 안됨.*/
+            display: inline-block ;
+            
+            /*float: left;*/ 
+            /* float는 엔터에 의한 여백을 없애주고, 왼쪽이나 오른쪽으로 붙여준다. 단 부모랑 따로 노는 문제점이 발생.
+            경고가 뜨는 이유는 보통 이 작업은 block일때 많이 사용하는데, inline-block에서 써서.
+            오른쪽으로 붙어서 실행될지, 왼쪽부터 실행될지 결정할 수 있음. left, right 써서.*/
+        }
+        /* block 태그들은 컨텐츠(자식)의 크기가 본인의 크기가 된다.*/
+        body{
+            border: 1px solid coral;
+        }
+        body::after{ /*자식에 float이 들어가면 이런식으로 써주는게 공식이라고 생각하면된다.*/
+            clear: both;
+            content: '';
+            display: block;
+        }
+        /*
+        body{
+            font-size: 0px;
+        }
+        body>*{
+            font-size: 16px;
+        }
+        박스들을 나열했을때 여백을 사라지게 하는 방법. 첫번째 방법같은 경우는 추천안함*/
+    </style>
+</head>
+<body>
+    <!--.box 누르면 바로 기본 div 박스를 만들 수 있음.-->
+    <div class="box">0</div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <!-- 만약 줄바꿈을 써서 이런식으로 쓰게되면, 박스들 사이에 여백이 생김. 하지만 한줄로 쓰면 여백없음.-->
+</body>
+</html>
