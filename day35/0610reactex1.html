@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 상자 100px X 100px를 5개 만들어서 화면에 출력하고, 화면의 길이가 600px이하이면 
+        상자가 50px X 50px로 변경되도록 반응형으로 작성해보세요.
+        
+        600px 이하이면 상자의 갯수가 5개에서 3개로 줄어들도록 변경해보세요.*/
+
+        .box{
+            display: inline-block;
+            background-color: salmon;
+        }
+        /*.box:nth-of-type(1){
+            width: 100px;
+            height: 100px;
+            background-color: rgb(175, 158, 190);
+        }
+        .box:nth-of-type(2){
+            width: 100px;
+            height: 100px;
+            background-color: rgb(160, 193, 212);
+        }
+        .box:nth-of-type(3){
+            width: 100px;
+            height: 100px;
+            background-color: rgb(215, 230, 187);
+        }
+        .box:nth-of-type(4){
+            width: 100px;
+            height: 100px;
+            background-color: rgb(212, 166, 160);
+        }
+        .box:nth-of-type(5){
+            width: 100px;
+            height: 100px;
+            background-color: rgb(212, 202, 160);
+        } */
+
+        @media (max-width: 600px) {
+            .box{
+                width: 50px;
+                height: 50px;
+            }
+            .box:nth-of-type(4),
+            .box:nth-of-type(5){
+                /*opacity: 0;*/
+                /* bac-color: white; 이렇게 써도 되지만 display 속성을 해도 된다.*/
+                display: none;
+            }
+        }
+        @media (min-width:601px) {
+            .box{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

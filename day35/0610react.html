@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <style>
+        /*
+        반응형이란?
+         - 디바이스 화면 크기에 따라 보여지는 화면이 다르게 보이는 것을 반응형이라고 한다.
+         반응형을 위한 @media
+         조건1관 조건2를 만족할 때 css를 적용
+         media (조건) and (조건){
+
+         }
+        */
+        body{
+            margin: 0;
+        }
+        .box{
+            width: 50%;
+            height: 100vh;
+            float: left;
+            background-color: rgb(175, 158, 190);
+        }
+        .box:nth-of-type(2){
+            background-color: rgb(212, 166, 160);
+        }
+
+        /* 640px이하인 장치에서 다음 css를 적용하세요. media를 쓸 때는 순서가 중요하다. */
+        @media (max-width: 640px) {
+            .box{
+                width: 100%;
+            }
+        }
+        @media(min-width: 641px) {
+            .box{
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
