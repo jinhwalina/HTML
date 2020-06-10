@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴바</title>
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       ul{
+           height: 50px;
+           overflow: hidden;
+           background-color: whitesmoke;
+       }
+       li{
+           list-style-type: none;
+           box-sizing: border-box;
+           width: calc(100% / 3);
+           float: left;
+           line-height: 50px;
+           text-align: center;
+           height: 100%;
+       }
+       a{ /* a 태그의 영역을 바꿔줌.*/ 
+           text-decoration: none;
+           color: gray;
+           width: 100%;
+           display: block;
+           height: 100%;
+           border: 2px solid slategray;
+           box-sizing: border-box;
+       }
+       li:nth-child(1)>a,li:nth-child(2)>a{ /* 부모 자식 관계 li 태그 밑에있는 a태그*/
+           border-right: none;
+       }
+       /* a:hover, li:hover 이렇게 해도 결과는 똑같지만 밑에 써준것처럼 범위 지정을 해주면 더 정확한 답 */
+       nav li>a:hover{
+           color: tan;
+           background-color: seashell;
+       }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+        </ul>   
+    </nav>
+</body>
+</html>

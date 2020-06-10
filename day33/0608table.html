@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+    <style>
+        table{
+            border: 1px solid darkkhaki;
+            border-collapse: collapse; /* 두줄로 표시되는 표를 한 줄로 나타내줌*/
+        }
+        td,th{
+            border: 1px solid darkkhaki;
+        }
+        /*tr>td:nth-child(1),
+        tr>td:nth-child(2){
+            width: 500px;
+        } 이렇게 써줘도 되지만, 밑에처럼 따로 써줘도 된다.*/
+        .name{
+            width: 500px;
+        }
+        .score{
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="name">이름</th>
+            <th class="score">점수</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>100</td>
+        </tr>
+    </table>
+</body>
+</html>

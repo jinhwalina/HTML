@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hi{
+            display: block;
+        }
+        span{ /* 기본이 inline 태그*/
+            background-color: salmon;
+            width: 500px;
+            height: 500px;
+        }
+        input{ /* 기본이 inline-block 태그 (크기는 변경이 되고, 새로운 라인에서 시작하진 않음)*/
+            width: 200px; 
+            /* width가 100% 로 설정되어 있다면, 가로의 길이가 커서 아래로 내려가 마치 block 태그처럼 보일 수 
+            있지만, block태그가 아니다.*/
+            height: 50px;
+        }
+        div{ /* 기본이 blolck 태그 (새 라인에서 시작)*/
+            border: 1px solid darkgoldenrod;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <span>안녕하세요.</span>
+    <input type="text">
+    <div class="box"></div>
+</body>
+</html>

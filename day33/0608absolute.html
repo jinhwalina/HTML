@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 모든 태그의 기본 position 값은 static */
+            width: 150px;
+            height: 150px;
+            line-height: 150px; /* 수직 가운데 정렬이 가능*/
+            text-align: center; /* 글자 가운데 정렬! */
+            font-size: 30px;
+            background-color: plum;
+            border: 1px solid black;
+        }
+        .absolute{ /* ( body 태그가 아니라 브라우저 화면을 기준으로 )
+        position : absolute 는 본인과 가장 가까운 조상 중에서 position이 relative인 조상을 기준으로한다.
+        없으면 브라우저 화면을 기준으로 ! 이걸 쓰는 이유는 배치하기가 편하다 ! 
+        
+        top은 위에서 아래로 박스가 배치되도록, bottom은 아래에ㅓ 위로 박스가 배치되도록, left는 왼쪽에서 오른쪽으로
+        right 오른쪽에서 왼쪽으로 박스가 배치되도록, 부호가 -면 반대 방향으로! */
+            position: absolute;
+            bottom: -50px; /* 0을 기준으로 50px 밑으로 내려감(-는 원래 기준에 반대로)*/
+            right: 0;
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: crimson;
+        }
+        .in-box:nth-of-type(1){
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .in-box:nth-of-type(2){
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>1번 박스</div>
+    <div>2번 박스</div>
+    <div class="absolute">3번 박스</div>
+    <div class="box">
+        <div class="in-box"></div>
+        <div class="in-box"></div>
+    </div>
+</body>
+</html>
