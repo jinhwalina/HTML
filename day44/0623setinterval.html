@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머예제</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+       .box-timer{
+           height: 262px;
+           width: 500px;
+           margin: 0 auto;
+           border: 1px solid black;
+           margin-top: 150px;
+           padding: 20px;
+           box-sizing: border-box;
+       }
+       .box-time{
+           width: 100%;
+           height: 100px; 
+           border: 1px solid rgb(204, 204, 204);
+           box-sizing: border-box;
+           line-height: 98px;
+           text-align: center;
+           font-size: 40px;
+           color: rgb(153, 153, 153);
+       }
+       .box-control{
+           width: 100%;
+           height: 100px;
+           margin-top: 20px;
+       }
+       #start, #stop, #record{
+           height: 100%;
+           width: 220px;
+           float: left;
+           box-sizing: border-box;
+           background-color: rgb(255, 242, 226);
+           color: grey;
+           border: none;
+           cursor: pointer;
+       }
+       #stop{
+           float: right;
+       }
+       .display-none{
+           display: none;
+       }
+       .box-record{
+           height: 200px;
+           width: 500px;
+           border: 1px solid black;
+           margin: 20px auto;
+           padding: 5px 20px;
+           box-sizing: border-box;
+       }
+       .box-title{
+           text-align: center;
+           height: 40px;
+           line-height: 40px;
+           font-size: 20px;
+       }
+       .box-content{
+           height: 148px;
+           text-align: center;
+           overflow: auto; 
+       }
+       .box{
+           height: 49px;
+           line-height: 49px;
+           font-size: 25px;
+       }
+    </style>
+</head>
+<body>
+    <div class="box-timer">
+        <div class="box-time">
+            <span class="hour">00</span>
+            <span class="colon">:</span>
+            <span class="min">00</span>
+            <span class="colon">:</span>
+            <span class="second">00</span>
+            <span class="ms">00</span>
+        </div>
+        <div class="box-control">
+            <button id="start">시작</button>
+            <button id="record" class="display-none">기록</button>
+            <button id="stop">중지</button>
+        </div>
+    </div>
+    <div class="box-record">
+        <div class="box-title">기록</div>
+        <div class="box-content">
+            <div class="box-1 box"></div>
+            <div class="box-2 box"></div>
+            <div class="box-0 box"></div>
+        </div>
+    </div>
+
+    <script>
+        var ms = 0;
+        var s = 0;
+        var m = 0;
+        var h = 0;
+        var timeArr = [];
+        var timerInterval; // 전역변수
+        $('#start').click(function(){
+            timerInterval = setInterval(function(){
+                ms++;
+                // 1초가 되는 순간 
+                if(ms == 100){
+                    ms = 0;
+                    s++;
+                }
+                // ms 출력 ( 초 분 시 는 함수를 이용해서 사용 한 것 )
+                if(ms < 10)
+                    $('.ms').text('0'+ms);
+                else
+                    $('.ms').text(ms);
+                // 1분 (60초가 되는 순간)
+                if(s == 60){
+                    s = 0;
+                    m++;
+                }
+                // 초 출력
+                printtime('.second',s);
+                // 1시간 (60분이 되는 순간)
+                if(m == 60){
+                    m = 0;
+                    h++;
+                }
+                // 분 출력 
+                printtime('.min',m);
+                // 시 출력
+                printtime('.hour',h);
+            },10)
+            
+            $('#record').removeClass('display-none');
+            $(this).addClass('display-none');
+        })
+        $('#stop').click(function(){
+            clearInterval(timerInterval); // clearInterval은 매개변수 필요
+            $('#record').addClass('display-none');
+            $('#start').removeClass('display-none');
+            ms = 0;     s = 0;      m = 0;      h = 0;
+            cnt = 1;
+        })
+
+        var cnt = 1;
+        $('#record').click(function(){
+            var str = getTime();
+            cnt = cnt % 3;
+            $('.box-'+cnt).html(str);
+            cnt++;
+            timeArr.push(str);
+        })
+
+        function getTime(){
+            var str = '';
+            str += getStr(h) + ' : ' + getStr(m) + ' : ' + getStr(s) + " " + getStr(ms);
+            return str;
+        }
+        function getStr(time){
+            if( time < 10)
+                return '0'+time;
+            else
+                return time;
+        }
+        function printtime(selector, time){
+            if( time < 10)
+                $(selector).text('0'+time);
+            else
+                $(selector).text(time);
+        }
+    </script>
+</body>
+</html>
