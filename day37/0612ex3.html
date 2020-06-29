@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 예제</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <input type="text" id="input1"><br>
+    <button id="btn1">클릭</button>
+    <div class="res"></div>
+    <script>
+        /* input 태그에서 val() 통해 가져온 값들은 문자열로 가져온다. */
+        $('#btn1').click(function(){
+            var tmp = $('#input1').val();
+            /*
+            tmp = parseInt(tmp) + 10; // parseInt 쓰기전에는 12310으로 출력되서 나온다.
+            console.log(tmp); */
+            tmp = parseInt(tmp);
+            var str = '';
+            for(var i=1; i<=9; i++){
+                str += tmp + ' x ' + i + ' = ' + tmp*i + '<br>';
+            }
+            $('.res').html(str);
+        })
+
+        $
+
+
+    </script>
+</body>
+</html>

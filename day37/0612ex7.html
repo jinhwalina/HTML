@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/0e9b7a4ea6.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .border{
+            border-color: brown;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        .nav, .nav>ul{
+            height: 40px;
+            background-color: rgb(255, 195, 172);
+        }
+        .nav li{
+            width: calc(100% / 3);
+            height: 100%;
+            box-sizing: border-box;
+            float: left;
+            border: 1px solid rgb(255, 255, 255);
+            line-height: 38px;
+            text-align: center;
+            color: white;
+
+        }
+        .nav li:nth-of-type(1), .nav li:nth-of-type(2){
+            border-right: 0;
+        }
+    </style>
+    <script>
+        $('nav').click(function(){
+            $(this).toggleClass();
+        })
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+    </nav>
+</body>
+</html>

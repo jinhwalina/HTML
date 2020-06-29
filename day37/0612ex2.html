@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 예제</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <button id="btn1">증가!</button>
+    <button id="btn2">바꿈!</button>
+    <div id="res">0</div>
+    <script>
+        var cnt = 0; // 달러 안에 써버리면 증가되지 않음. 밖에 선언해줘야한다. 전역변수!
+        var add = true;
+    </script>
+    <script>
+        $('#btn1').click(function(){
+            if(add)
+                cnt++;
+            else
+                cnt--;
+            $('#res').text(cnt);
+        }) // 이렇게 위 스크립트에 쓰지 않고 여기에 따로 써도 적용이 된다.
+        $('#btn2').click(function(){
+            var str;
+            if(add){
+                str = '감소!';
+            }else{
+                str = '증가!';
+            }
+
+            // str = add?'감소' : '증가'; 간단히 쓰면 이렇게도 쓸 수 있다.
+            $('#btn1').text(str);
+            add = !add; // true의 반대를 나타낼 수 있게 이렇게 써준다 > true의 반대! false
+        })
+    </script>
+</body>
+</html>
