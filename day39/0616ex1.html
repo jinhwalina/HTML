@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <h1>설문지</h1>
+    <div class="res"></div>
+    <script>
+         $(function(){
+             var index = 1;
+            $('#add').click(function(){
+                var str = $('.res').html();
+                str = str + '질문' +index +
+                '<div>' +
+                    '<input type = "text" placeholder = "질문을 입력하세요">' + 
+                    '<button>확인</button>' +
+                '</div>';
+                index++;
+                $('.res').html(str);
+                registerBtn();
+            })
+            var cnt = 0;
+            function registerBtn(){
+                $('.res button').click(function(){
+                    var text = $(this).prev().val();
+                    console.log(text);
+                })
+            }
+        })
+    </script>
+    <button id="add">질문추가</button>
+</body>
+</html>
